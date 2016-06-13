@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FirstContact</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= debug params %>
+<hr>
+
+<h1>Tacos Rule</h1>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/contact">Contact</a>
+  <a href="/legal">Legal</a>
+  <a href="/about">About</a>
+</nav>
+
+<%= yield %>
+
+<h5>Salads Drool</h5>
+
+<div class="">
+  <ul>
+    <li><a href="/products/bike">Bike</a></li>
+    <li><a href="/products/helmet">Helmet</a></li>
+  </ul>
+</div>
+
+
+
+</body>
+</html>
