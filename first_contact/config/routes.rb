@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
   # method | url | controller#action
-  get 'contact' => 'pages#contact'
-  get 'legal' => 'pages#legal'
-  get 'about' => 'pages#about'   # => app/views/pages/about.html.erb
+  get 'get-in-touch' => 'pages#contact', as: :contact
+  get 'corporate/legal' => 'pages#legal', as: :legal
+  get 'about-us' => 'pages#about', as: :about   # => app/views/pages/about.html.erb
   root 'pages#index' # => 'app/views/pages/index.html'
 
-  get 'products' => 'products#list'
-  get 'products/:id' => 'products#detail' # => app/views/products/detail.html.erb
+  #   <%= link_to 'Products', products_path %>
+
+  get 'products' => 'products#list', as: :products
+  get 'products/:id' => 'products#detail', as: :product # => app/views/products/detail.html.erb
 
   # params = {
   #   id: 'bike'

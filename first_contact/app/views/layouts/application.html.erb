@@ -14,12 +14,12 @@
 <h1>Tacos Rule</h1>
 
 <nav>
-  <a href="/">Home</a>
-  <a href="/contact">Contact</a>
-  <a href="/legal">Legal</a>
-  <a href="/about">About</a>
-  <a href="/team">Team</a>
-  <a href="/products">Products</a>
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'Contact', contact_path %>
+  <%= link_to 'Legal', legal_path %>
+  <%= link_to 'About', about_path %>
+  <%= link_to 'Team', team_path %>
+  <%= link_to 'Products', products_path %>
 </nav>
 
 <%= yield %>
