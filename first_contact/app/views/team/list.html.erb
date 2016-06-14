@@ -1,0 +1,7 @@
+<h1>there is no i in team</h1>
+
+<ul>
+  <% @team.each do |name| %>
+    <li><a href="/team/<%= name.parameterize %>"><%= name %></a></li>
+  <% end %>
+</ul>

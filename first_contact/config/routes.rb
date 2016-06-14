@@ -8,6 +8,17 @@ Rails.application.routes.draw do
 
   get 'products/:id' => 'products#detail' # => app/views/products/detail.html.erb
 
+  # params = {
+  #   id: 'bike'
+  #   controller: 'products',
+  #   action: 'detail'
+  # }
+
+  get 'team' => 'team#list'
+  get 'team/:id' => 'team#detail'
+
+
+
 
   # elsif route.match('products/:id')
     # html = ProductsController.new().detail

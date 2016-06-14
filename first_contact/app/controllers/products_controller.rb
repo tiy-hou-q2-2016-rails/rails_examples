@@ -21,12 +21,7 @@ class ProductsController < ApplicationController
       # check the id
       id = params[:id]
       @product_name = valid_product_names.find {|p| p == id}
-      if @product_name.present?
-        # we're good!
-      else
-        render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
-      end
-    # if not, raise 'hell'
+      render_404 if @product_name.nil?
 
 
   end
