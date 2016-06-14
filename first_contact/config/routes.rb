@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'   # => app/views/pages/about.html.erb
   root 'pages#index' # => 'app/views/pages/index.html'
 
+  get 'products' => 'products#list'
   get 'products/:id' => 'products#detail' # => app/views/products/detail.html.erb
 
   # params = {
