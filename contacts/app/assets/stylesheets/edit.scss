@@ -1,0 +1,9 @@
+a.edit {
+  border: 1px solid #cccccc;
+  padding: 10px 30px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #cccccc;
+    color: #ffffff;
+  }
+}

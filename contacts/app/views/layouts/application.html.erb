@@ -8,6 +8,13 @@
 </head>
 <body>
 
+  <header>
+    <h1><%= link_to 'Home', root_path %></h1>
+    <nav>
+      <%= link_to 'Contacts', contacts_path %>
+    </nav>
+  </header>
+
 <%= yield %>
 
 </body>

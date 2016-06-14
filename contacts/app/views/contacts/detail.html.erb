@@ -1,0 +1,16 @@
+<h2><%= @contact.full_name %></h2>
+
+<ul>
+  <li>
+    <strong>email: </strong> <%= @contact.email %>
+  </li>
+
+
+</ul>
+
+<div class="">
+  <%= link_to 'Edit', edit_contact_path, class: 'edit' %>
+</div>
+
+<hr>
+<%= link_to 'Back to Contact List', contacts_path %>
