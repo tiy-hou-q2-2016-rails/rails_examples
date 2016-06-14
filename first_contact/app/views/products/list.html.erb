@@ -1,7 +1,44 @@
 <h1>Products</h1>
 
-<ul>
-  <% @products.each do |product| %>
-    <li><a href="/products/<%= product.parameterize %>"><%= product %></a></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Inventory
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        View
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.name %>
+        </td>
+        <td>
+          <%= number_to_currency product.price %>
+        </td>
+        <td>
+          <%= pluralize product.inventory, product.name %>
+        </td>
+        <td>
+          <%= truncate product.description, length: 140 %>
+        </td>
+        <td>
+          <a href="/products/<%= product.name.parameterize %>">View</a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

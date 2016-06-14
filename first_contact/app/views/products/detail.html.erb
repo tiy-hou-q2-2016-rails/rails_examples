@@ -1,1 +1,9 @@
-<h1><%= @product %></h1>
+<h1><%= @product.name %></h1>
+
+<dl class="">
+  <dt>Price</dt>
+  <dd><%= number_to_currency @product.price %></dd>
+
+  <dt>Description</dt>
+  <dd><%= @product.description %></dd>
+</dl>

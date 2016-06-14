@@ -1,0 +1,17 @@
+$main_font_color: #666666;
+
+body {
+  color: $main_font_color;
+
+  a {
+    color: darken($main_font_color, 20%);
+  }
+}
+nav {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
