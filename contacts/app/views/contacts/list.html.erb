@@ -1,11 +1,48 @@
-<h2>Contact List</h2>
+<div class="page-header">
+  <h1>Contact List</h1>
+</div>
 
-<ul>
-  <% @contacts.each do |contact| %>
-    <li>
-      <%= link_to contact.full_name, contact_path(id: contact.id) %>
-      <%= link_to 'Edit', edit_contact_path(id: contact.id) %>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>
+        First Name
+      </th>
+      <th>
+        Last Name
+      </th>
+      <th>
+        Email
+      </th>
+      <th>
+        View
+      </th>
+      <th>
+        Edit
+      </th>
+    </tr>
+  </thead>
 
-    </li>
-  <% end %>
-</ul>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td>
+          <%= contact.first_name %>
+        </td>
+        <td>
+          <%= contact.last_name %>
+        </td>
+        <td>
+          <%= contact.email %>
+        </td>
+        <td>
+          <%= link_to 'View', contact_path(id: contact.id) %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_contact_path(id: contact.id) %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
