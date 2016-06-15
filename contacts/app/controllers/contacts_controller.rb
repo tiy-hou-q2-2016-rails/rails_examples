@@ -1,22 +1,21 @@
+require 'csv'
+
 class ContactsController < ApplicationController
-
   class Contact
-    attr_accessor :first_name, :last_name, :email
+    attr_accessor :id, :first_name, :last_name, :email, :photo
 
-    def initialize(first, last, email)
+    def initialize(id, first, last, email, photo)
+      @id = id
       @first_name = first
       @last_name = last
       @email = email
+      @photo = photo
     end
 
     def full_name
-      [@first_name, @last_name].join(" ").titlecase
+      [@first_name, @last_name].join(' ').titlecase
     end
-
-    def id
-      full_name.parameterize
     end
-  end
 
   def list
     @contacts = fetch_contacts
@@ -25,25 +24,39 @@ class ContactsController < ApplicationController
   def detail
     @contacts = fetch_contacts
 
-    @contact = @contacts.find {|c| c.id == params[:id]}
+    @contact = @contacts.find { |c| c.id == params[:id] }
   end
 
   def edit
     @contacts = fetch_contacts
 
-    @contact = @contacts.find {|c| c.id == params[:id]}
+    @contact = @contacts.find { |c| c.id == params[:id] }
   end
 
   def fetch_contacts
-    jwo = Contact.new "jesse", "yolo", "jesse@example.com"
-    dorton = Contact.new "brian", "batana", "brian.dorton@example.com"
-    matt = Contact.new "Matt", "kuju", "matt@example.com"
+    contacts = []
 
-    return [
-      jwo,
-      dorton,
-      matt,
-    ]
+    CSV.foreach("#{Rails.root}/customers.csv", headers: true) do |row|
+      the_hash = row.to_hash
+      id       = the_hash['id']
+      first    = the_hash['first_name']
+      last     = the_hash['last_name']
+      email    = the_hash['email']
+      photo    = "https://randomuser.me/api/portraits/med/#{%w(men women).sample}/#{id}.jpg"
+      contact  = Contact.new id, first, last, email, photo
+      contacts << contact
+    end
+
+    contacts
+
+    # jwo = Contact.new "jesse", "yolo", "jesse@example.com"
+    # dorton = Contact.new "brian", "batana", "brian.dorton@example.com"
+    # matt = Contact.new "Matt", "kuju", "matt@example.com"
+    #
+    # return [
+    #   jwo,
+    #   dorton,
+    #   matt,
+    # ]
   end
-
 end

@@ -6,6 +6,9 @@
   <thead>
     <tr>
       <th>
+        Photo
+      </th>
+      <th>
         First Name
       </th>
       <th>
@@ -26,6 +29,9 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td>
+          <%= image_tag contact.photo, class: "img-circle tiny" %>
+        </td>
         <td>
           <%= contact.first_name %>
         </td>
