@@ -1,2 +1,29 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="page-header">
+  <h1><%= @product.name %></h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-8">
+    <div class="thumbnail text-center">
+      <%= image_tag @product.image, class: "large" %>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+
+    <div class="well">
+      <%= link_to 'Add to Cart', '#', class: "btn btn-lg btn-block btn-success" %>
+
+        <br>
+
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Price: </strong><%= number_to_currency @product.price %></li>
+          <li class="list-group-item"><strong>Category: </strong><%= @product.category %></li>
+          <li class="list-group-item"><strong>Name: </strong><%= @product.name %></li>
+          <li class="list-group-item"><strong>Description: </strong><br><%= @product.description %></li>
+        </ul>
+
+      </div>
+
+  </div>
+</div>
