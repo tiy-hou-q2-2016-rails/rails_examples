@@ -1,0 +1,9 @@
+<h1>Album: <%= @album.title %></h1>
+<h2>Artist: <%= @album.artist_name %></h2>
+
+<h2>Tracks</h2>
+<ol>
+  <% @tracks.each do |track| %>
+    <li><%= track["Name"] %></li>
+  <% end %>
+</ol>
