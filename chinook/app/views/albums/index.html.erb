@@ -1,1 +1,11 @@
-Hi
+<h1>Albums</h1>
+
+<p>
+  There are <%= pluralize @albums.count, 'album' %> in the Database.
+</p>
+
+<ul>
+  <% @albums.each do |album| %>
+    <li><%= album["Title"] %></li>
+  <% end %>
+</ul>
