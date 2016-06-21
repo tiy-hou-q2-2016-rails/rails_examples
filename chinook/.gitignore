@@ -7,9 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+# For Chinook, store the SQLITE db in got
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+#/db/*.sqlite3
+#/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
 /log/*
