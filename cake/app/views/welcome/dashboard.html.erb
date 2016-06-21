@@ -1,0 +1,32 @@
+<h1>% of Cake Today</h1>
+
+<% if @number_of_people > 0 %>
+  <p>
+    Number of people in your office: <%= @number_of_people %>.
+  </p>
+
+  <h1>Chance for cake: <%= number_to_percentage @chance*100 %></h1>
+
+<% else %>
+  <p>
+    To determine, we need to know % of people in your office.
+  </p>
+
+  <form class="" action="/" method="get">
+    <input type="text" name="number_of_people" value="">
+    <input type="submit" name="name" value="Submit">
+  </form>
+
+<% end %>
+
+<h3>Least Likely Day: <%= @least_likely_day %> (<%= @least_likely_day_start %>)</h3>
+<h3>Most Likely Day: <%= @most_likely_day %> (<%= @most_likely_day_start %>)</h3>
+
+<h3>Most likely DOBs: <%= @ten_most_likely_births %></h3>
+<h3>Least Likely DOBs: <%= @ten_least_likely_births %></h3>
+
+<% @day_of_years.each do |date, percentage| %>
+  <li>
+      <%= date %> : <%= number_to_percentage (percentage * 100) %>
+  </li>
+<% end %>
