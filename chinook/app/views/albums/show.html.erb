@@ -3,7 +3,7 @@
 
 <h2>Tracks</h2>
 <ol>
-  <% @tracks.each do |track| %>
-    <li><%= track["Name"] %></li>
+  <% @album.tracks.each do |track| %>
+    <li><%= track.name %></li>
   <% end %>
 </ol>

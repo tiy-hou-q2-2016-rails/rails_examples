@@ -6,6 +6,6 @@
 
 <ul>
   <% @albums.each do |album| %>
-    <li><%= link_to album.title, album_path(id: album.id) %></li>
+    <li><%= link_to album.title, album_path(id: album.id) %> - <%=pluralize album.track_count, 'track' %></li>
   <% end %>
 </ul>
