@@ -1,1 +1,6 @@
 <h1>Artist: <%= @artist.name %></h1>
+
+<div class="">
+  <%= link_to 'Edit', edit_artist_path(id: @artist.id) %>
+  <%= link_to 'Delete', artist_path(id: @artist.id), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>

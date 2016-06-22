@@ -1,0 +1,17 @@
+<h1>Editing: <%= @artist.name %></h1>
+
+
+<% if @error_message %>
+  <div class="error">
+    <%= @error_message %>
+  </div>
+<% end %>
+
+<%= form_tag artist_path(id: @artist.id), method: :patch do %>
+  <div class="">
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @artist.name, class: "field", placeholder: 'New Artist Name' %>
+  </div>
+
+  <%= submit_tag %>
+<% end %>

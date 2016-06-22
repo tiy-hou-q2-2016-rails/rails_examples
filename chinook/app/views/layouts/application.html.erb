@@ -13,6 +13,15 @@
   <%= link_to 'Albums', albums_path %>
   <%= link_to 'Artists', artists_path %>
 </nav>
+
+<% if notice.present? %>
+<div class="notice">
+    <p>
+      <%= notice %>
+    </p>
+</div>
+<% end %>
+
 <%= yield %>
 
 </body>
