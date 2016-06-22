@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get "/albums" => 'albums#index', as: :albums
   get "/albums/:id" => 'albums#show', as: :album
+  get '/artists' => 'artists#index', as: :artists
+  get '/artists/:id' => 'artists#show', as: :artist
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
