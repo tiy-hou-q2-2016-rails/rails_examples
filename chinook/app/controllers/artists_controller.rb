@@ -18,5 +18,13 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    results = ActiveRecord::Base.connection.execute "
+      SELECT *
+      FROM Artist
+      WHERE ArtistId = #{params[:id]}
+    "
+    result = results.first
+    @artist = Artist.new result["ArtistId"], result["Name"]
+
   end
 end
