@@ -52,7 +52,7 @@ class AlbumsController < ApplicationController
 
   def show
     album_sql = "
-        SELECT Artist.*, Album.Name as 'ArtistName'
+        SELECT Album.*, Artist.Name as 'ArtistName'
         FROM Album
         INNER JOIN Artist ON Album.ArtistId = Artist.ArtistID
         WHERE Album.AlbumId = #{params[:id]}
