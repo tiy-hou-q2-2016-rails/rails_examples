@@ -9,9 +9,14 @@
           No Albums Found
         </p>
       <% end %>
+
       <% @artist.albums.each do |album| %>
-        <%= link_to album.title, album_path(id: album.id), class: 'list-group-item' %>
+        <%= link_to album_path(id: album.id), class: 'list-group-item' do %>
+          <%= album.title %> by <%= album.artist.name %>
+          <span class="badge"><%= album.play_count %></span>
+        <% end %>
       <% end %>
+
     </div>
   </div>
   <div class="col-xs-4">

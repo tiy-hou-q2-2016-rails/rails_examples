@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'albums/new' => 'albums#new', as: :new_album
   get 'albums/:id' => 'albums#show', as: :album
   post 'albums' => 'albums#create'
+  post 'albums/:id/play' => 'albums#play', as: :play_album
 
 
   # The priority is based upon order of creation: first created -> highest priority.

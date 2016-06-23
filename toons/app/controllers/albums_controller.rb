@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   def index
+    @albums = Album.all.order("play_count desc")
   end
 
   def show
@@ -20,5 +21,12 @@ class AlbumsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def play
+    @album = Album.find_by id: params[:id]
+    @album.play_count += 1
+    @album.save
+
   end
 end

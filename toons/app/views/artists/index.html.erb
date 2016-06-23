@@ -16,11 +16,22 @@
     </div>
   </div>
   <div class="col-xs-3 col-xs-offset-1">
+
+    <p class="text-center">
+      <strong>Most Popular Album:</strong><br>
+      <%= link_to album_path(id: @most_popular_album.id), class: "" do %>
+        <%= @most_popular_album.title %> by <%= @most_popular_album.artist.name %>
+      <% end %>
+    </p>
+
     <p class="text-right">
       <%= link_to 'New Artist', new_artist_path, class: "btn btn-primary btn-block" %>
-      <br><br>
+    </p>
+    <p class="text-right">
       <%= link_to 'New Album', new_album_path, class: "btn btn-primary btn-block" %>
-
+    </p>
+    <p class="text-right">
+      <%= link_to 'All Albums', albums_path, class: "btn btn-primary btn-block" %>
     </p>
   </div>
 </div>

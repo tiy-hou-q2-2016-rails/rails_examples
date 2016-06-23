@@ -1,3 +1,11 @@
 <div class="page-header">
   <h1><%= @album.title %> <small>by <%= @album.artist.name %></small> </h1>
 </div>
+
+<p>
+  <%= pluralize @album.play_count, 'play' %>
+</p>
+
+<%= link_to play_album_path(id: @album.id), method: :post, class: "btn btn-success btn-lg" do %>
+  <i class="glyphicon glyphicon-triangle-right"></i>
+<% end %>

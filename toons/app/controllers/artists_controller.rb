@@ -10,10 +10,12 @@ class ArtistsController < ApplicationController
     #   artist
     # end
 
+    # @artists = Artist.all # select * from artists
+    # @artists = Artist.where name: "Nirvana" # select * from artists where name = 'Nirvana'
+    # Artist.count # select count(*) from artists
     @artists = Artist.all # select * from artists
-    @artists = Artist.where name: "Nirvana" # select * from artists where name = 'Nirvana'
-    Artist.count # select count(*) from artists
-    @artists = Artist.all # select * from artists
+
+    @most_popular_album = Album.order("play_count desc").limit(1).first
 
   end
 
