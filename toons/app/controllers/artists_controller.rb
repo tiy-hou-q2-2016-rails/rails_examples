@@ -37,7 +37,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
     @artist.name = params[:artist][:name] # gets what user typed in for name
     if @artist.save # checks .valid? first
-      redirect_to artists_path
+      redirect_to artists_path, notice: "Artist Created! Yay! \o/"
     else
       render :new
     end

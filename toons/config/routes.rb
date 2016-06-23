@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  root 'artists#index'
+
   get 'artists' => 'artists#index', as: :artists
   get 'artists/new' => 'artists#new', as: :new_artist
   get 'artists/:id' => 'artists#show', as: :artist
   post 'artists' => 'artists#create'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

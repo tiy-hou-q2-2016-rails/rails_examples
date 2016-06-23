@@ -1,9 +1,24 @@
-<h1>Artists</h1>
+<div class="page-header">
 
-<%= link_to 'New Artist', new_artist_path %>
+  <h1>Artists <small>Very Artistic</small></h1>
 
-<ul>
-  <% @artists.each do |artist| %>
-    <li><%= link_to artist.name, artist_path(id: artist.id)%></li>
-  <% end %>
-</ul>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-xs-8">
+    <div class="list-group">
+      <% @artists.each do |artist| %>
+        <%= link_to artist.name, artist_path(id: artist.id), class: 'list-group-item'%>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <p class="text-right">
+      <%= link_to 'New Artist', new_artist_path, class: "btn btn-primary" %>
+
+    </p>
+  </div>
+</div>

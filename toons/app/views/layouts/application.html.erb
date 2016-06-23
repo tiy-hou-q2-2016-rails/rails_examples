@@ -8,7 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <h1><i class="glyphicon glyphicon-music"></i> Toons</h1>
+</header>
+
+<div class="container">
+
+  <% if notice.present? %>
+    <p class="alert alert-success">
+      <%= notice %>
+    </p>
+  <% end %>
+
+  <%= yield %>
+</div>
 
 </body>
 </html>
