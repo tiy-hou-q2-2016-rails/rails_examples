@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get 'artists/:id' => 'artists#show', as: :artist
   post 'artists' => 'artists#create'
 
+  get 'albums' => 'albums#index', as: :albums
+  get 'albums/new' => 'albums#new', as: :new_album
+  get 'albums/:id' => 'albums#show', as: :album
+  post 'albums' => 'albums#create'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

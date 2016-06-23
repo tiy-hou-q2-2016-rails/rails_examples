@@ -27,6 +27,14 @@ class ArtistsController < ApplicationController
     # @artist = Artist.where(id: params[:id]).first
 
     @artist = Artist.find_by id: params[:id]
+    # select * from artist where id= 10 limit 1
+
+    # artist has many albums
+    # album belongs to artist
+
+    # @albums = Album.where artist_id: params[:id]
+    # select * from albums where artist_id = 10
+    # @albums = @artist.albums
   end
 
   def new
