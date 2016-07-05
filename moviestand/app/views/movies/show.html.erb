@@ -1,1 +1,17 @@
 <h1><%= @movie.title %></h1>
+
+
+
+<h2>Actors</h2>
+
+<%= link_to 'Assign Actor to Movie', new_movie_actor_path(movie_id: @movie.id) %>
+
+<% if @movie.actors.empty? %>
+  <p>
+    No Actors Found
+  </p>
+<% end %>
+
+<% @movie.actors.each do |actor| %>
+  <h5><%= link_to actor.name, actor_path(id: actor.id) %></h5>
+<% end %>

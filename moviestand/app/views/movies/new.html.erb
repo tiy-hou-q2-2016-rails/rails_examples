@@ -1,0 +1,23 @@
+<h1>New Movie</h1>
+
+<% @movie.errors.full_messages.each do |msg| %>
+  <p>
+    <%= msg %>
+  </p>
+<% end %>
+
+<%= form_for @movie do |f| %>
+  <div class="">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="">
+    <%= f.label :year %>
+    <%= f.select :year, (1900..Date.today.year) %>
+  </div>
+
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,9 @@
 <h1>Movies</h1>
 
+<%= link_to 'New Movie', new_movie_path %>
+
 <ul>
   <% @movies.each do |movie| %>
-    <li><%= link_to movie.title, movie_path(id: movie.id) %></li>
+    <li><%= link_to movie.title, movie_path(id: movie.id) %> - (<%= movie.actors.pluck(:name).join(", ") %>) </li>
   <% end %>
 </ul>

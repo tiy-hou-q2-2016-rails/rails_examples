@@ -4,3 +4,7 @@ thandie = Actor.create! name:  "Thandie Newton", photo_url: "https://upload.wiki
 
 mi2 = Movie.create! title: "Mission Impossible 2", year: 1999
 topgun = Movie.create! title: "Top Gun", year: 1985
+
+MovieActor.create! movie_id: mi2.id, actor_id: tom.id
+MovieActor.create! movie_id: mi2.id, actor_id: thandie.id
+MovieActor.create! movie_id: topgun.id, actor_id: tom.id

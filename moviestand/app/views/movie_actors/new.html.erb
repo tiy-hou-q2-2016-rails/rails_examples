@@ -1,0 +1,18 @@
+<h1>New Role for Movie</h1>
+
+<%= form_for @movie_actor do |f| %>
+  <div class="">
+    <%= f.label :movie %>
+    <%= f.collection_select :movie_id, Movie.all, :id, :title, prompt: true %>
+  </div>
+
+  <div class="">
+    <%= f.label :actor %>
+    <%= f.collection_select :actor_id, Actor.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="">
+    <%= f.submit %>
+  </div>
+
+<% end %>
