@@ -1,0 +1,7 @@
+<h1>Actors</h1>
+
+<ul>
+  <% @actors.each do |actor| %>
+    <li><%= link_to actor.name, actor_path(id: actor.id) %></li>
+  <% end %>
+</ul>
